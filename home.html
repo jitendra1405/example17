@@ -12,12 +12,24 @@
    </thead>
    <tbody>
 <?php
-$query = "select name from contact.contact"
+$query = " "
     
 $result = $db->query($);
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
  echo htmlspecialchars($row["name"]);
 }$result->closeCursor();
+?>
+    <?php
+$query = "SELECT name "
+    . "FROM contact.contact";
+$result = $db->query($query);
+while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+    echo "<tr>";
+    
+    echo "<td>" . htmlspecialchars($row["name"]) . "</td>";
+    echo "</tr>";
+}
+$result->closeCursor();
 ?>
    </tbody>
   </table>
